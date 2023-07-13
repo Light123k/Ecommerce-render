@@ -33,6 +33,10 @@ const payment = require("./routes/paymentroute.js")
 
 const errormiddleware = require("./middleware/error.js")
 
+app.get("/",(req,res)=>{
+    res.setHeader("Access-Control-Allow-Credentials","true")
+})
+
 
 
 
@@ -43,9 +47,7 @@ app.use("/api/v1", payment)
 
 
 
-app.get("*", function (req, res) {
-    res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
-});
+
 
 
 app.use(errormiddleware)
