@@ -6,7 +6,7 @@ const cors = require('cors')
 const path = require("path");
 
 
-require("dotenv").config({ path: "backend/config/config.env" });
+require("dotenv").config();
 
 
 
@@ -19,7 +19,7 @@ app.use(bodyparser.urlencoded({ extended: true }));
 //app.use(bodyparser.urlencoded({ extended: true }))
 app.use(fileupload())
 app.use(cors())
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+//app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 // console.log("hi")
 // console.log(path.join(__dirname, '../frontend/build'))
